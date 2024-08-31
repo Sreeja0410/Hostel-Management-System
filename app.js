@@ -134,25 +134,9 @@ app.get("/displaycomplains", async function (req, res) {
         res.render("displaycomplaints", { complaints: found });
     } catch (err) {
         console.error(err);
-        res.redirect("errorPage"); // replace with actual error handling
+        res.redirect("errorPage"); 
     }
 });
-
-/*
-app.get("/displaycomplains", function (req, res) {
-    console.log("Your are HEre");
-
-    Complaints.find({}, function (err, found) {
-        if (!err) {
-            console.log("success fulle found " + found);
-            var complaints;
-            res.render("displaycomplaints", { complaints: found });
-        }
-    });
-
-});
-
-*/
 
 app.get("/displayleaves", async function (req, res) {
     try {
@@ -163,25 +147,9 @@ app.get("/displayleaves", async function (req, res) {
         res.render("displayleaves", { leaves: found });
     } catch (err) {
         console.error(err);
-        res.redirect("errorPage"); // replace with actual error handling
+        res.redirect("errorPage"); 
     }
 });
-
-
-/*
-app.get("/displayleaves", function (req, res) {
-    console.log("Your are HEre");
-
-    Leave.find({}, function (err, found) {
-        if (!err) {
-            console.log("success fulle found " + found);
-            var leaves;
-            res.render("displayleaves", { leaves: found });
-        }
-    });
-
-});
-*/
 
 app.get("/forms", function (req, res) {
     res.render("forms");
@@ -231,45 +199,11 @@ app.post("/complaint", async function (req, res) {
         res.redirect("home/student/222");
     } catch (err) {
         console.log(err);
-        res.redirect("errorPage"); // replace with actual error handling
+        res.redirect("errorPage"); 
     }
 });
 
 
-/*
-app.post("/complaint", function (req, res) {
-    var complaint = {
-        title: req.body.title,
-        image: req.body.image,
-        description: req.body.content,
-        type: req.body.type,
-        // author:{
-        //     id:req.user._id,
-        //     username:req.user.username
-        // }
-    }
-    Complaints.create(complaint, function (err, complaint) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            //   Student.findById(req.user._id,function(err,founduser){
-            //       if(err){
-            //           console.log(err);
-            //       }
-            //       else{
-            //           founduser.complaints.push(complaint);
-            //           founduser.save();
-            //           res.redirect("home/student/"+req.user._id);
-            //       }
-            //   });
-            console.log("Complaint success");
-            console.log(complaint);
-            res.redirect("home/student/222");
-        }
-    });
-});
-*/
 
 app.post("/leave_req", async function (req, res) {
     try {
@@ -285,41 +219,10 @@ app.post("/leave_req", async function (req, res) {
         res.redirect("home/student/222");
     } catch (err) {
         console.log(err);
-        res.redirect("errorPage"); // replace with actual error handling
+        res.redirect("errorPage"); 
     }
 });
 
-/*
-app.post("/leave_req", function (req, res) {
-    var leave = {
-        request: req.body.request,
-        author: {
-            username: "STUDENT XYZ"
-        }
-    }
-    Leave.create(leave, function (err, leave) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            //   Student.findById(req.user._id,function(err,founduser){
-            //       if(err){
-            //           console.log(err);
-            //       }
-            //       else{
-            //           founduser.complaints.push(complaint);
-            //           founduser.save();
-            //           res.redirect("home/student/"+req.user._id);
-            //       }
-            //   });
-            console.log("Leave Request add success");
-            console.log(leave);
-            res.redirect("home/student/222");
-        }
-    });
-});
-
-*/
 
 app.post("/leaverequest", async function (req, res) {
     try {
@@ -337,39 +240,10 @@ app.post("/leaverequest", async function (req, res) {
         res.redirect("home/student/" + req.user._id);
     } catch (err) {
         console.log(err);
-        res.redirect("errorPage"); // replace with actual error handling
+        res.redirect("errorPage"); 
     }
 });
 
-/*
-app.post("/leaverequest", function (req, res) {
-    var leavereq = {
-        request: req.body.request,
-        author: {
-            id: req.user._id,
-            username: req.user.username
-        }
-    }
-    Leave.create(leavereq, function (err, complaint) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            Student.findById(req.user._id, function (err, founduser) {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    founduser.leave_request.push(leavereq);
-                    founduser.save();
-                    res.redirect("home/student/" + req.user._id);
-                }
-            });
-        }
-    });
-});
-
-*/
 
 app.post("/lostitem", async function (req, res) {
     try {
@@ -390,43 +264,10 @@ app.post("/lostitem", async function (req, res) {
         res.redirect("home/student/" + req.user._id);
     } catch (err) {
         console.log(err);
-        res.redirect("errorPage"); // replace with actual error handling
+        res.redirect("errorPage"); 
     }
 });
 
-/*
-
-app.post("/lostitem", function (req, res) {
-    var lostitem = {
-        item: req.body.item,
-        image: req.body.image,
-        description: req.body.description,
-        type: 'LOST',
-        author: {
-            id: req.user._id,
-            username: req.user.username
-        }
-    }
-    LostFound.create(lostitem, function (err, lostitem) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            Student.findById(req.user._id, function (err, founduser) {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    founduser.lostfound.push(lostitem);
-                    founduser.save();
-                    res.redirect("home/student/" + req.user._id);
-                }
-            });
-        }
-    });
-});
-
-*/
 
 app.post("/founditem", async function (req, res) {
     try {
@@ -447,42 +288,11 @@ app.post("/founditem", async function (req, res) {
         res.redirect("home/student/" + req.user._id);
     } catch (err) {
         console.log(err);
-        res.redirect("errorPage"); // replace with actual error handling
+        res.redirect("errorPage"); 
     }
 });
 
-/*
-app.post("/founditem", function (req, res) {
-    var founditem = {
-        item: req.body.item,
-        image: req.body.image,
-        description: req.body.description,
-        type: 'FOUND',
-        author: {
-            id: req.user._id,
-            username: req.user.username
-        }
-    }
-    LostFound.create(founditem, function (err, founditem) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            Student.findById(req.user._id, function (err, founduser) {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    founduser.lostfound.push(founditem);
-                    founduser.save();
-                    res.redirect("home/student/" + req.user._id);
-                }
-            });
-        }
-    });
-});
 
-*/
 
 app.post("/forgot-password", async function (req, res) {
     try {
@@ -501,12 +311,12 @@ app.post("/forgot-password", async function (req, res) {
         user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
         await user.save();
 
-        // Send email
+        
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
                 user: process.env.EMAIL,
-                pass: process.env.MAILPWD, // or an app-specific password if you have 2FA enabled
+                pass: process.env.MAILPWD, 
             },
         });
 

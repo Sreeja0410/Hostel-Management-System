@@ -345,6 +345,6 @@ app.post("/forgot-password", async function (req, res) {
     }
 });
 
-app.listen(port, host, function () {
+app.listen(port, host,'0.0.0.0', function () {
     console.log("Server running at : http:/" + host + ":" + port + "/");
 });

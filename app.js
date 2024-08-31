@@ -11,7 +11,7 @@ var session = require("express-session");
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var port = 3000 || process.env.PORT;
-var host = '127.0.0.1' || process.env.HOST;
+var host = '0.0.0.0' || process.env.HOST;
 
 var Student = require("./models/student");
 var Admin = require("./models/admin");
@@ -345,6 +345,6 @@ app.post("/forgot-password", async function (req, res) {
     }
 });
 
-app.listen(port, host,'0.0.0.0', function () {
+app.listen(port, host, function () {
     console.log("Server running at : http:/" + host + ":" + port + "/");
 });

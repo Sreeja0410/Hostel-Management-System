@@ -1,0 +1,583 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Login</title>
+  <link rel="icon" type="image/jpeg" href="home.jpeg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  </head>
+
+<style media="screen">
+  
+  	.header{
+   			background-color:#002147;
+   			height: auto;
+   			text-align: center;
+        margin-bottom: 1%;
+
+   		}
+   		.container1{
+   			width: 80%;
+   			margin: auto;
+   		}
+   	.cont1	p {
+   			border: 2px solid white;
+   			border-right: none;
+   			border-left: none;
+   			font-size: 1.3vw;
+   			color: white;
+   		}
+
+      .cont3	p {
+     			border: 2px solid white;
+     			border-right: none;
+     			border-left: none;
+     			font-size: 1.3vw;
+     			color: white;
+     		}
+   		.cont1, .cont3{
+   			width: 45%;
+   			float: left;
+   			margin-top: 2.4%;
+   		}
+   		.cont2{
+			width: 30%;
+			float: left;
+		}
+
+		.cont2 img{
+			width:30vw;
+			height:6vw;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+   		@media screen and (max-width: 1200px){
+   			.container1{
+   				width: 85%;
+   			}
+   			.cont1 p{
+   				font-size: 8px;
+        }
+        .cont3 p{
+   				font-size: 8px;
+   			}
+   		}
+   		
+  body{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1vw;
+    box-sizing: border-box;
+  }
+  .container{
+    width: 95%;
+  }
+  #name1{
+    font-size: 1.2vw;
+  }
+  #name2{
+    font-size: 1.1vw;
+    color: #838491;
+  }
+  #menu1{
+    width: 100%;
+    padding: 20px;
+    overflow: auto;
+  }
+  .photo{
+    width: 15%;
+    float: left;
+    margin: 10px;
+  }
+  .photo img{
+    width: 100%;
+    height: 100%;
+  }
+  .info{
+    float: left;
+    width: 80%;
+    height: auto;
+    overflow: auto;
+    padding: 20px;
+  }
+  .left, .right{
+    width: 50%;
+    overflow: auto;
+    float: left;
+  }
+  .left{
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+  }
+  .right{
+    border-top: 2px solid grey;
+    border-right: 2px solid grey;
+    border-bottom: 2px solid grey;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .tab {
+    float: left;
+    background-color: white;
+    width: 20%;
+    height: auto;
+    overflow: auto;
+    margin-right: 30px;
+  }
+
+    .tab button {
+      display: block;
+      color: #787474;
+      background-color: white;
+      padding: 18px 16px;
+      width: 100%;
+      border: 0px solid #4822E9;
+      border-radius: 0 25px 25px 0px;
+      outline: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    .tab button:hover {
+      color: #4822E8;
+    }
+
+    .tab button.active {
+      background-color: #E8ECFE;
+    }
+    .tabcontent {
+      float: left;
+      padding: 0px 12px;
+      border: 1px solid #ccc;
+      width: 70%;
+      border-left: none;
+      height: 300px;
+    }
+
+    #menu4{
+      overflow: none;
+    }
+    .flex-container {
+      margin: auto;
+      width: 55%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flex-container > div {
+      background-color: #FFFFFF;
+      width: 200px;
+      height: 170px;
+      margin: 30px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 6px 6px 25px #CFCFCF, -6px 1px 25px #CFCFCF;
+      transition: all .3s;
+    }
+
+    .flex-container > div > div{
+      margin-top: 25px;
+    }
+    .flex-container p{
+      font-size: 22px;
+    }
+    .flex-container > div:hover{
+      transform: scale(1.08);
+    }
+    hr.style18 {
+      height: 30px;
+      border-style: solid;
+      border-color: grey;
+      border-width: 2px 0 0 0;
+      border-radius: 20px;
+    }
+    hr.style18:before {
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: #8c8b8b;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+    }
+  @media screen and (max-width: 1000px) {
+
+    .container ul li a{
+      font-size: 7.52px;
+    }
+    .left{
+      border-left: 2px solid grey;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    .photo{
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .info{
+      width: 100%;
+      text-align: center;
+    }
+    .photo img{
+      width: 300px;
+      height: 200px;
+    }
+    .info p{
+      font-size: 15px;
+    }
+    #name1{
+      font-size: 20px;
+    }
+    #name2{
+      font-size: 18px;
+    }
+    .tab{
+      width: 30%;
+    }
+    .tab button{
+      font-size: 10px;
+      padding: 10px;
+    }
+    .tabcontent{
+      width: 60%;
+      height: 220px;
+      font-size: 10px;
+    }
+    .tabcontent h3{
+      font-size: 15px;
+    }
+    .flex-container{
+      width: 85%;
+    }
+    .flex-container > div{
+      margin: 10px;
+      width: 100%;
+    }
+    table{
+      font-size: 14px;
+    }
+  }
+
+</style>
+<body>
+ <div class="header">
+		<div class="container1">
+		
+		<div class="cont2">
+        
+			
+		</div>
+		
+    <div style="clear:both">
+
+    </div>
+	</div>
+	</div>
+
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#menu1"><i class="fas fa-user"></i> Profile</a></li>
+      <li><a data-toggle="tab" href="#menu3"><i class="fas fa-chart-line"></i> My Activities</a></li>
+      <li><a data-toggle="tab" href="#menu4"><i class="fas fa-poll"></i> Complaints</a></li>
+      <li><a data-toggle="tab" href="#menu5"><i class="fas fa-poll"></i> Student Pivot</a></li>
+      <li><a  href="/"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="menu1" class="tab-pane fade in active">
+        <div class="photo">
+          <img src=<%= student.picture %> alt="User">
+        </div>
+        <div class="info">
+          <p id="name1"><b><%= student.first_name %> <%= student.last_name %></b></p>
+          <br>
+          <p id="name2">About</p>
+          <div class="left">
+            <p>Student Id</p>
+            <p><i class="fas fa-user-circle"></i> Name</p>
+            <p><i class="fas fa-birthday-cake"></i> DOB</p>
+            <p><i class="fas fa-male"></i> Gender</p>
+            <p><i class="fas fa-hotel"></i> Alloted Hostel</p>
+            <p><i class="fas fa-book-open"></i> Branch Name</p>
+            <p><i class="fas fa-user-tie"></i> Father's name</p>
+            <p><i class="fas fa-house-damage"></i> Address</p>
+            <p><i class="fas fa-envelope"></i> Email</p>
+            <p></p>
+          </div>
+          <div class="right">
+            <p><%= student.username || "-" %> </p>
+            <p><%= student.first_name %> <%= student.last_name %></p>
+            <p><%= student.DOB || "-"%> </p>
+            <p><%= student.gender || "-"%> </p>
+            <p><%= student.hostel || "-" %> </a></p>
+            <p><%= student.branch || "-" %> </p>
+            <p><%= student.father_name || "-"%> </p>
+            <p><%= student.address || "-"%> </p>
+            <p><%= student.email || "-"%> </p>
+          </div>
+        </div>
+      </div>
+     
+      <div id="menu3" class="tab-pane fade">
+        <h3>My Activities</h3>
+
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'FeedBack')" id="defaultOpen">FeedBack, Grievances & Requests</button>
+          <button class="tablinks" onclick="openCity(event, 'Attendance')">Attendance Status</button>
+          <button class="tablinks" onclick="openCity(event, 'Leave')">Leave Application</button>
+         
+          <button class="tablinks" onclick="openCity(event, 'Grades')">Grades Reports</button>
+          <button class="tablinks" onclick="openCity(event, 'Notices')">Circular and Notices</button>
+        </div>
+
+        <div id="FeedBack" class="tabcontent">
+          <h3>FeedBack, Grievances & Requests</h3>
+          <p>Tell me your Feedback</p>
+        </div>
+
+        <div id="Attendance" class="tabcontent">
+          <h3>Attendance Status</h3>
+          <p>Check your Status</p>
+        </div>
+
+        <div id="Leave" class="tabcontent">
+          <div class="container">
+          <div class="row">
+              <h1 style="text-align:center;">ASK FOR LEAVE REQUEST</h1>
+              <div style="width:30%; margin:30px auto;">
+                  <form action="/leave_req" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Request" name="request">
+                </div>
+                <div class="form-group">
+                       <button class="btn btn-primary btn-lg btn-block">SUBMIT</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    </div>
+        </div>
+
+        <div id="Grades" class="tabcontent">
+          <h3>Grades & Reports</h3>
+          <p>Check your Result</p>
+        </div>
+
+        <div id="Notices" class="tabcontent">
+          <h3>Circular and Notices</h3>
+          <p>Check for any Notices</p>
+        </div>
+
+      </div>
+
+      <div id="menu4" class="tab-pane fade">
+        <h1 style="text-align: center;">Complaints</h1>
+        <br>
+        <hr class="style18">
+        <br>
+        <div class="flex-container">
+          <div>
+            <div>
+              <i class="fas fa-globe-americas" style="font-size: 50px; opacity: .8;"></i>
+            </div>
+            <div>
+                <a href="/forms"><p>Internet Issue</p></a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <i class="fas fa-person-booth" style="font-size: 50px; opacity: .8;"></i>
+            </div>
+            <div>
+              <a href="/forms"><p>Room Issue</p></a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <i class="fas fa-hotel" style="font-size: 50px; opacity: .8;"></i>
+            </div>
+            <div>
+              <a href="/forms"><p>Hostel Amenities</p></a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <i class="fas fa-utensils" style="font-size: 50px; opacity: .8;"></i>
+            </div>
+            <div>
+              <a href="/forms"><p>Mess Food Issue</p></a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <i class="fas fa-highlighter" style="font-size: 50px; opacity: .8;"></i>
+            </div>
+            <div>
+              <a href="/forms"><p>Lost & Found</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <div id="menu5" class="tab-pane fade">
+                               <hr>
+                    
+                    <header class="w3-container w3-theme w3-padding" id="myHeader">
+                    
+                      <div class="w3-center">
+                    
+                      <h1 class="w3-xxxlarge w3-animate-bottom">Welcome to Student Pivot</h1>
+                        </div>
+                    </header>
+                    <hr>
+                    <h2 class="w3-center">Explore</h2>
+                    <div class="w3-border">
+                    <div class="w3-bar w3-theme">
+                      <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'London')">Vote</button>
+                      <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Paris')">Emergency</button>
+                      <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Tokyo')">Pre-inform Mess</button>
+                      <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Tokyo')">Inform Your College</button>
+                    </div>
+                    
+                    <div id="London" class="w3-container city w3-animate-opacity">
+                      <h2>Vote</h2>
+                      <p>Choose the right leader to see the next term as a progressive one.</p>
+                      <p>You play an important role in the selection of the right candidate so do not let go of this opportunity.</p>
+                    </div>
+                    
+                    <div id="Paris" class="w3-container city w3-animate-opacity">
+                      <h2>Emergency</h2>
+                      <p>Inform your nearest residing friends in case of any health or some other emergencies.</p>
+                      <p>Direct your friends before the doctors to reach you out</p>
+                    </div>
+                    
+                    <div id="Tokyo" class="w3-container city w3-animate-opacity">
+                      <h2>Pre-inform Mess</h2>
+                      <p>Help your mess administration know that you won't be dining in the mess today</p>
+                      <p>This will help prevent the extra food from being prepared.</p>
+                    </div>
+                    
+                    </div>
+                    
+                    <h2 class="w3-center">Perform</h2>
+                    <button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Vote</button>
+                    <button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Emergency</button>
+                    <button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Pre-Inform Mess</button>
+                    <button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Inform Your College</button>
+                  
+                    
+                    <script>
+                    function w3_open() {
+                      var x = document.getElementById("mySidebar");
+                      x.style.width = "100%";
+                      x.style.fontSize = "40px";
+                      x.style.paddingTop = "10%";
+                      x.style.display = "block";
+                    }
+                    function w3_close() {
+                      document.getElementById("mySidebar").style.display = "none";
+                    }
+                    
+                    // Tabs
+                    function openCity(evt, cityName) {
+                      var i;
+                      var x = document.getElementsByClassName("city");
+                      for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                      }
+                      var activebtn = document.getElementsByClassName("testbtn");
+                      for (i = 0; i < x.length; i++) {
+                        activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+                      }
+                      document.getElementById(cityName).style.display = "block";
+                      evt.currentTarget.className += " w3-dark-grey";
+                    }
+                    
+                    var mybtn = document.getElementsByClassName("testbtn")[0];
+                    mybtn.click();
+                    
+                    // Accordions
+                    function myAccFunc(id) {
+                      var x = document.getElementById(id);
+                      if (x.className.indexOf("w3-show") == -1) {
+                        x.className += " w3-show";
+                      } else {
+                        x.className = x.className.replace(" w3-show", "");
+                      }
+                    }
+                    
+                    // Slideshows
+                    var slideIndex = 1;
+                    
+                    function plusDivs(n) {
+                      slideIndex = slideIndex + n;
+                      showDivs(slideIndex);
+                    }
+                    
+                    function showDivs(n) {
+                      var x = document.getElementsByClassName("mySlides");
+                      if (n > x.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = x.length} ;
+                      for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                      }
+                      x[slideIndex-1].style.display = "block";
+                    }
+                    
+                    showDivs(1);
+                    
+                    function move() {
+                      var elem = document.getElementById("myBar");
+                      var width = 5;
+                      var id = setInterval(frame, 10);
+                      function frame() {
+                        if (width == 100) {
+                          clearInterval(id);
+                        } else {
+                          width++;
+                          elem.style.width = width + '%';
+                          elem.innerHTML = width * 1  + '%';
+                        }
+                      }
+                    }
+                    </script>
+                             
+       </div>
+    </div>
+  </div>
+
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
+  </script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hostels</title>
+  <link rel="icon" type="image/jpeg" href="home.jpeg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+  <style media="screen">
+
+
+      hr {
+     height: 30px;
+     border-style: solid;
+     border-color: #8c8b8b;
+     border-width: 1px 0 0 0;
+     border-radius: 20px;
+    }
+    hr:before {
+     display: block;
+     content: "";
+     height: 30px;
+     margin-top: -31px;
+     border-style: solid;
+     border-color: #8c8b8b;
+     border-width: 0 0 1px 0;
+     border-radius: 20px;
+    }
+    .container{
+      width: 100%;
+    }
+
+    body{
+      font-family: 'Ubuntu', sans-serif;
+      font-size : 20px;
+    }
+    .name{
+      background: #384B7B;
+      padding: 1%;
+      text-align: center;
+      font-size: 2em;
+      color: white;
+      width: 100%;
+      height: auto;
+    }
+
+    .info{
+      float: left;
+      width: 54%;
+      margin-top: 3%;
+    }
+
+    .clear{
+      clear: both;
+    }
+
+    #img1{
+      float: right;
+      width: 40%;
+      margin:  3%;
+      background: url("jasper.jpg");
+      height: 400px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+    }
+
+    #img0{
+      float: right;
+      width: 40%;
+      margin:  3%;
+      background: url("rosaline.jpg");
+      height: 400px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+    }
+
+    #img2{
+      float: right;
+      width: 40%;
+      margin:  3%;
+      background: url("amber.jpg");
+      height: 400px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+    }
+
+    #img3{
+      float: right;
+      width: 40%;
+      margin:  3%;
+      background: url("aquamarine.jpg");
+      height: 400px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+    }
+
+
+    .galleryh{
+      margin: 0.5%;
+      width: 98%;
+      height: auto;
+
+    }
+
+    .galleryc{
+      width: 22%;
+      float: left;
+      height: auto;
+      margin-left: 2%;
+      overflow: hidden;
+      border-radius: 10%;
+
+    }
+
+    .gallery{
+      width: 100%;
+      float: left;
+      height: auto;
+       border-radius: 10%;
+       transition: all 0.5s;
+    }
+
+    .gallery:hover{
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+
+    .gallery img{
+      width: 100%;
+      height: 200px;
+      border-radius: 10%;
+
+    }
+
+    .contacts{
+      width: 100%;
+      margin: auto;
+    }
+
+
+        .contactlist {
+      position: relative;
+      width: 8%;
+      float: left;
+      margin-left: 2%;
+      border-radius: 20%;
+      overflow: hidden;
+    }
+
+          .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: #008CBA;
+          overflow: hidden;
+          width: 100%;
+          height: 0;
+          transition: .5s ease;
+          opacity: 0.8;
+        }
+
+        .contactlist:hover .overlay {
+          height: 100%;
+        }
+
+        .text {
+          color: white;
+          font-size: 14px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+
+
+
+    .map1 {
+      background: url("rosaline-map.png");
+      background-size: cover;
+        height: 400px;  /* The height is 400 pixels */
+        width: 60%; 
+        margin:auto;
+        border:2px solid black;/* The width is the width of the web page */
+       }
+       .map2 {
+      background: url("jasper-map.png");
+      background-size: cover;
+        height: 400px;  /* The height is 400 pixels */
+        width: 60%; 
+        margin:auto;
+        border:2px solid black;/* The width is the width of the web page */
+       }
+       .map3 {
+      background: url("amber-map.png");
+      background-size: cover;
+        height: 400px;  /* The height is 400 pixels */
+        width: 60%; 
+        margin:auto;
+        border:2px solid black;/* The width is the width of the web page */
+       }
+       .map4 {
+      background: url("aquamarine-map.png");
+      background-size: cover;
+        height: 400px;  /* The height is 400 pixels */
+        width: 60%; 
+        margin:auto;
+        border:2px solid black;/* The width is the width of the web page */
+       }
+
+       
+   		.header{
+   			background-color:#002147;
+   			height: auto;
+   			text-align: center;
+        margin-bottom: 1%;
+
+   		}
+   		.container1{
+   			width: 80%;
+   			margin: auto;
+   		}
+   	.cont1	p {
+   			border: 2px solid white;
+   			border-right: none;
+   			border-left: none;
+   			font-size: 1.3vw;
+   			color: white;
+   		}
+
+      .cont3	p {
+     			border: 2px solid white;
+     			border-right: none;
+     			border-left: none;
+     			font-size: 1.3vw;
+     			color: white;
+     		}
+   		.cont1, .cont3{
+   			width: 45%;
+   			float: left;
+   			margin-top: 2.4%;
+   		}
+   		.cont2{
+   			width: 30%;
+   			float: left;
+   		}
+
+   		img{
+   			width:30vw;
+   			height:6vw;
+   			display: block;
+   			margin-left: auto;
+   			margin-right: auto;
+   		}
+
+   		@media screen and (max-width: 1200px){
+   			.container1{
+   				width: 85%;
+   			}
+   			.cont1 p{
+   				font-size: 8px;
+        }
+        .cont3 p{
+   				font-size: 8px;
+   			}
+   		}
+
+    @media screen and (max-width: 600px) {
+      #img1{
+        width: 96%;
+        height: 300px;
+      }
+
+
+
+      #img0{
+        width: 96%;
+        height: 300px;
+      }
+
+      #img2{
+        width: 96%;
+        height: 300px;
+      }
+
+      #img3{
+        width: 96%;
+        height: 300px;
+      }
+
+      .info{
+        width: 100%;
+      }
+
+      .galleryc{
+        width: 80%;
+        margin-top: 2%;
+        margin-bottom: 1%;
+        clear: both;
+        margin-left: 10%;
+      }
+
+      .gallery img{
+        width: 100%;
+        margin: auto;
+      }
+
+      .contactlist {
+    width: 30%;
+    margin-top: 2%;
+    }
+
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="header">
+  		<div class="container1">
+  		
+  		<div class="cont2">
+        <img src="logo_new.png" alt="logo" >	
+		</div>
+  		
+  	</div>
+    <div class="clear">
+
+    </div>
+  	</div>
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Hostel 1</a></li>
+    <li><a data-toggle="tab" href="#menu1">Hostel 2</a></li>
+    <li><a data-toggle="tab" href="#menu2">Hostel 3</a></li>
+    <li><a data-toggle="tab" href="#menu3">Hostel 4</a></li
+    </div>
+  </ul>
+
+
+
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <div class ="name">Rosaline Hostel</div>
+        <div id="img0"></div>
+        <div class="info">
+            <p>Rosaline is the largest girls’ hostel in the campus. It is a 10-storey building offering spacious rooms provided to the students on a twin-sharing basis. The hostel is equipped with high speed elevators and a high speed internet facility, along with Central AC in common areas. In addition, the facilities of vanity shops and canteens are also there. There are two different parts of Rosaline hostel namely New Rosaline with a capacity of about 880 girl students and the other is Old Rosaline with a capacity of 400 girls. Both of them are fully equipped with mess facilities accompanied by fully furnished and hygienic dining halls. Adding to these, a gym is also available solely for its residents. When it comes to sports, the hostel also boasts of a volleyball court, a badminton court and a table tennis court.</p>
+       
+       </div>
+        <div class="clear"></div>
+        <h2>Gallery</h2>
+        <hr>
+        <div class="galleryh">
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Cinque Terre">
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Forest" >
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Northern Lights" >
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Mountains" >
+            </div>
+          </div>
+
+          <div class="clear"></div>
+          </div>
+          <hr>
+         
+          <h2>Map</h2>
+          <div class="map1"></div>
+          <hr>
+          <h2>Contacts</h2>
+          <div class="contacts">
+            <div class="contactlist">
+              <img src="av.png" alt="Avatar" class="image">
+              <div class="overlay">
+                <div class="text">Chief Warden<br> 9810355532</div>
+              </div>
+            </div>
+          <div class="contactlist">
+            <img src="av2.png" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Hostel Warden<br> 9830189594</div>
+            </div>
+          </div>
+          <div class="contactlist">
+            <img src="av3.png" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Care Taker<br> 9973402823</div>
+            </div>
+          </div>
+          <div class="contactlist">
+            <img src="av4.png" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Mess Council<br> 9304603155	</div>
+            </div>
+          </div>
+          <div class="clear"> </div>
+        </div>
+        <hr>
+    </div>
+
+
+    <div id="menu1" class="tab-pane fade">
+                  <div class ="name">Jasper</div>
+                  <div id="img1"></div>
+                  <div class="info">
+                      <p>With a capacity of 2400 students, Jasper stands as the largest hostel in the campus of IIT(ISM) Dhanbad. Comprising of 4 blocks and 5 floors, it is a fully residential boys hostel. Each block has a badminton court, with, with two Table Tennis tables & one TV in each of the the common rooms. The hostel is equipped with high speed Wi-fi and LAN ports. Every block has a fully functional lift, with one, with one common lift for all the blocks. Along with this, each block has 4 stairways and 1 terrace which boasts of a scenic view. There is 24*7 ambulance, electricity and water facility, with a separate cycle stand for those having bicycles. There is a laundry and newspaper facility on daily basis. This hostel serves as a home for all the first year B.Tech. students, M.Tech. students and JRFs.</p>
+                  </div>
+                <div class="clear"></div>
+                <h2>Gallery</h2>
+                <hr>
+                <div class="galleryh">
+                  <div class="galleryc">
+                    <div class="gallery">
+                        <img src="" alt="Cinque Terre">
+                    </div>
+                  </div>
+
+                  <div class="galleryc">
+                    <div class="gallery">
+                        <img src="" alt="Forest" >
+                    </div>
+                  </div>
+
+                  <div class="galleryc">
+                    <div class="gallery">
+                        <img src="" alt="Northern Lights" >
+                    </div>
+                  </div>
+
+                  <div class="galleryc">
+                    <div class="gallery">
+                        <img src="" alt="Mountains" >
+                    </div>
+                  </div>
+
+                  <div class="clear"></div>
+              </div>
+              <hr>
+             
+              <h2>Map</h2>
+              <div class="map2"></div>
+              <hr>
+              <h2>Contacts</h2>
+              <div class="contacts">
+                <div class="contactlist">
+                  <img src="av.png" alt="Avatar" class="image">
+                  <div class="overlay">
+                    <div class="text">Chief Warden<br> 9471192194</div>
+                  </div>
+                </div>
+              <div class="contactlist">
+                <img src="av2.png" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div class="text">Hostel Warden<br> 7869777275</div>
+                </div>
+              </div>
+              <div class="contactlist">
+                <img src="av3.png" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div class="text">Care Taker<br> 7682893389</div>
+                </div>
+              </div>
+              <div class="contactlist">
+                <img src="av4.png" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div class="text">Mess Council<br> 9471154739</div>
+                </div>
+              </div>
+              <div class="clear"> </div>
+        </div>
+        <hr>
+   </div>
+
+
+
+
+    <div id="menu2" class="tab-pane fade">
+
+          <div class ="name">Amber</div>
+          <div id="img2"></div>
+          <div class="info">
+              <p>The Amber hostel is the second largest boys’ hostel in the campus. With a capacity of around 1600 boys, it is home to the 2nd and 3rd year students of the institute. This four storeyed hostel building provides all kinds of facilities to students ranging from high speed Wi-fi and LAN to various kinds of indoor and outdoor games. A couple of canteens cater to the late-night snack needs of its residents, with two badminton courts available for their recreation. The hostel has a couple of canteens to cater to the late-night snack needs of the students, with a spacious cycle stand near the entrance.</p>
+          </div>
+        <div class="clear"></div>
+        <h2>Gallery</h2>
+        <hr>
+        <div class="galleryh">
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Cinque Terre">
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Forest" >
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Northern Lights" >
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Mountains" >
+            </div>
+          </div>
+
+          <div class="clear"></div>
+      </div>
+      <hr>
+      
+      <h2>Map</h2>
+      <div class="map3"></div>
+      <hr>
+      <h2>Contacts</h2>
+      <div class="contacts">
+        <div class="contactlist">
+          <img src="av.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Chief Warden<br> 9651853535</div>
+          </div>
+        </div>
+        <div class="contactlist">
+          <img src="av2.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Hostel Warden<br> 9471191341</div>
+          </div>
+        </div>
+        <div class="contactlist">
+          <img src="av3.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Care Taker<br> 9734778872</div>
+          </div>
+        </div>
+        <div class="contactlist">
+          <img src="av4.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Mess Council<br> 9027425536</div>
+          </div>
+        </div>
+        <div class="clear"> </div>
+      </div>
+      <hr>
+    </div>
+
+
+
+    <div id="menu3" class="tab-pane fade">
+          <div class ="name">Aquamarine</div>
+          <div id="img3"></div>
+          <div class="info">
+              <p>Aquamarine Hostel at IIT ISM Dhanbad is a residential facility designed to accommodate students with a comfortable and conducive living environment. It has a capacity of approximately 800-900 students, providing a mix of single and double occupancy rooms. The hostel was constructed in response to the need for additional residential facilities and was completed in 2023, making it one of the newer hostels on campus. It is equipped with essential amenities such as Wi-Fi, ensuring that students have access to the internet for academic and personal use. The hostel also includes a mess that serves regular meals, a common room for recreation, and study rooms for focused academic work. The facilities are aimed at fostering a balanced student life, offering spaces for both study and relaxation.</p>
+           </div>
+        <div class="clear"></div>
+        <h2>Gallery</h2>
+        <hr>
+        <div class="galleryh">
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Cinque Terre">
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Forest" >
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Northern Lights" >
+            </div>
+          </div>
+
+          <div class="galleryc">
+            <div class="gallery">
+                <img src="" alt="Mountains" >
+            </div>
+          </div>
+
+          <div class="clear"></div>
+      </div>
+      <hr>
+     
+      <h2>Map</h2>
+      <div class="map4"></div>
+      <hr>
+      <h2>Contacts</h2>
+      <div class="contacts">
+        <div class="contactlist">
+          <img src="av.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Chief Warden<br> 9471191850</div>
+          </div>
+        </div>
+        <div class="contactlist">
+          <img src="av2.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Hostel Warden<br> 9471191569</div>
+          </div>
+        </div>
+        <div class="contactlist">
+          <img src="av3.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Care Taker<br> 9149683769</div>
+          </div>
+        </div>
+        <div class="contactlist">
+          <img src="av4.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Mess Council<br> 8828290580</div>
+          </div>
+        </div>
+        <div class="clear"> </div>
+      </div>
+      <hr>
+  </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+</body>
+</html>

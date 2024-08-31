@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaves</title>
+	<link rel="icon" type="image/jpeg" href="home.jpeg">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  	a {
+  		font-size:1.5vw;
+  	}
+  </style>
+</head>
+<body>
+	<!--<ul>-->
+	<!--   <% leaves.forEach(function(leave){ %>-->
+	<!--        <li>-->
+	<!--            <h3 style="text-transform:uppercase;"><%=leave.request %></h3>-->
+ <!--               <p><%= leave.author.username %></p>-->
+ <!--               <br>-->
+ <!--               <hr>-->
+	<!--        </li>-->
+ <!--               <% }); %>-->
+                
+	<!--</ul>-->
+	
+		<div class="container">
+		  <h2>Leave Requests:-</h2>
+		  <% leaves.forEach(function(leave){ %>
+		  <div class="list-group">
+		    <a href="#" class="list-group-item active" style="text-transform:uppercase;"><%=leave.request %></a>
+		    <a href="#" class="list-group-item">BY : <%=leave.author.username %>
+		     <ul class="list-inline"><li><button class= "btn btn-lg btn-success">Approve</button></li>
+		    <li><button class= "btn btn-danger btn-lg">Decline</li></ul></a>
+		   
+		  </div>
+		  <% }); %>
+			</div>
+</body>
+</html>

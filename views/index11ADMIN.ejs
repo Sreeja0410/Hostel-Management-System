@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Administration Login Page</title>
+    <link rel="icon" type="image/jpeg" href="home.jpeg">
+    <link rel="stylesheet" href="styleADMIN.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div id="container-login">
+        <div id="title">
+            <i class="material-icons lock">lock</i> Administration Login
+        </div>
+
+        <form action="/adminlogin" method="post">
+            <div class="input"  >
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="username" placeholder="Admin Name" name="username" type="text" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <input id="password" placeholder="Password" name="password" type="password" required class="validate" autocomplete="off">
+            </div>
+
+
+            <input type="submit" value="Admin Log In" />
+        </form>
+
+
+
+
+    </div>
+</body>
+
+</html>

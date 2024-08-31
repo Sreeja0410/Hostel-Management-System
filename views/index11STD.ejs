@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="home.jpeg">
+    <title>Student Login Page</title>
+    
+    <link rel="stylesheet" href="styleSTD.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div id="container-login">
+        <div id="title">
+            <i class="material-icons lock">lock</i> Student Login
+        </div>
+
+        <% if (error_msg) { %>
+            <div class="alert alert-danger">
+                <%= error_msg %>
+            </div>
+        <% } %>
+        <% if (success_msg) { %>
+            <div class="alert alert-success">
+                <%= success_msg %>
+            </div>
+        <% } %>
+
+        <form action="studentlogin" method="POST">
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="username" placeholder="Username" name="username" type="text" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <input id="password" placeholder="Password" name="password" type="password" required class="validate" autocomplete="off">
+            </div>
+
+            <input style="margin-top: 10px;" type="submit" value="Log In" />
+        </form>
+
+        <div class="forgot-password">
+            <a href="#" id="forgot-password-link">Forgot your password?</a>
+        </div>
+
+        <form id="forgot-password-form" action="/forgot-password" method="POST">
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">email</i>
+                </div>
+                <input id="email" placeholder="Enter your email" name="email" type="email" required class="validate" autocomplete="off">
+            </div>
+            <input style="margin-top: 10px;" type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("forgot-password-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("forgot-password-form").style.display = "block";
+        });
+    </script>
+</body>
+
+</html>

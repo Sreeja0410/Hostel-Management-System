@@ -1,16 +1,21 @@
 var mongoose = require("mongoose");
 
 var complaintSchema = new mongoose.Schema({
-    title: String,
-    image: String,
-    description: String,
     type: String,
+    description: String,
+    level: {
+        type: String,
+        enum: ["Low", "Medium", "High"],
+        required: true
+    },
+    status: {
+        type: String,
+        enum: ["resolved", "pending"],
+        default: "pending"
+    },
     author: {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Student"
-        },
-        username: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Student"
     }
 });
 

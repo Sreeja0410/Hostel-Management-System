@@ -3,8 +3,7 @@
 <head>
     <!-- Make site responsive on mobile/tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QnAHub - Leave Request</title>
-    <!-- <link rel="icon" type="image/jpeg" href="home.jpeg"> -->
+    <title>QnAHub - Feedback Form</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -87,45 +86,45 @@
 <body>
 
 <div class="container">
-    <h1>Request Leave</h1>
+    <h1>Feedback Form</h1>
     <div>
-        <form action="/leave_request/<%= student._id %>" method="POST">
-            <!-- Request Reason -->
+        <form action="/feedback_request/<%= student._id %>" method="POST">
+            <!-- Feedback Type -->
             <div class="form-group">
-                <label for="request">Leave Request</label>
-                <input class="form-control" type="text" placeholder="Enter reason for leave" name="reason" required>
-            </div>
-            <!-- Leave Type -->
-            <div class="form-group">
-                <label for="leave-type">Leave Type</label>
-                <select class="form-control" name="type" id="leave-type" required>
-                    <option value="" disabled selected>Select Leave Type</option>
-                    <option value="Sick Leave">Sick Leave</option>
-                    <option value="Casual Leave">Casual Leave</option>
-                    <option value="Earned Leave">Earned Leave</option>
-                    <option value="Other">Other</option>
+                <label for="feedback-type">Feedback Type</label>
+                <select class="form-control" name="type" id="feedback-type" required>
+                    <option value="" disabled selected>Select Feedback Type</option>
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="General Feedback">General Feedback</option>
                 </select>
             </div>
-            <!-- Start Date -->
+            <!-- Feedback Description -->
             <div class="form-group">
-                <label for="start-date">Start Date</label>
-                <input type="date" class="form-control" name="startDate" id="start-date" required>
+                <label for="description">Feedback Description</label>
+                <textarea class="form-control" id="description" name="description" rows="4" placeholder="Describe your feedback here..." required></textarea>
             </div>
-            <!-- End Date -->
+            <!-- Rating -->
             <div class="form-group">
-                <label for="end-date">End Date</label>
-                <input type="date" class="form-control" name="endDate" id="end-date" required>
+                <label for="rating">Rating</label>
+                <select class="form-control" name="rating" id="rating" required>
+                    <option value="" disabled selected>Select Rating</option>
+                    <option value="1">1 - Very Poor</option>
+                    <option value="2">2 - Poor</option>
+                    <option value="3">3 - Neutral</option>
+                    <option value="4">4 - Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
             </div>
             <!-- Submit Button -->
             <div class="form-group">
-                <button class="btn btn-primary btn-lg btn-block">Submit Request</button>
+                <button class="btn btn-primary btn-lg btn-block">Submit Feedback</button>
             </div>
         </form>
         <!-- Back Button -->
-        <a href="/home/student/<%= student._id  %>" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <a href="/home/student/<%= student._id %>" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
 </div>
 
 </body>
 </html>
-

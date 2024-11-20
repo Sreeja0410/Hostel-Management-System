@@ -1,13 +1,18 @@
 var mongoose = require("mongoose");
 
 var leaveSchema = new mongoose.Schema({
-    request: String,
+    reason: String, 
+    type: String, 
+    startDate: Date, 
+    endDate: Date,
+    status: {
+        type: String,
+        enum: ["approved", "denied", "pending"],
+        default: "pending"
+    },
     author: {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Student"
-        },
-        username: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Student"
     }
 });
 

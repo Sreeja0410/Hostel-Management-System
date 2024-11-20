@@ -1,155 +1,168 @@
 <!DOCTYPE html>
-<html>
-<title>Admin</title>
-<link rel="icon" type="image/jpeg" href="home.jpeg">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
+<html lang="en">
+<head>
+  <title>Admin Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 1.5rem;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .header {
+      background-color: #002147;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .tab-content {
+      margin-top: 40px;
+    }
+    .activities-container {
+      display: flex;
+      height: 60vh;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .activities-menu {
+      width: 25%;
+      padding: 20px;
+      background-color: #f1f1f1;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .activity-button {
+      padding: 15px;
+      font-size: 1.5rem;
+      text-align: center;
+      background-color: #002147;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .activity-button:hover {
+      background-color: #1a3b6e;
+    }
+    .activity-content {
+      width: 75%;
+      padding: 25px;
+      overflow-y: auto;
+      display: none;
+    }
+    .activity-content.active {
+      display: block;
+    }
+  </style>
+</head>
 
+<body>
+  <div class="header">Admin Dashboard</div>
 
-<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-<button class="w3-bar-item w3-right" type="button" href="/"><a  href="/"><i class="fas fa-sign-out-alt"></i> Log Out</a></button>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#activities"><i class="fas fa-tasks"></i> Activities</a></li>
+      <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+    </ul>
 
-</div>
-
-
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container w3-row">
-    <div class="w3-col s8 w3-bar">
-      <span>Welcome <strong>ADMIN!!</strong></span><br>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-    </div>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Dashboard</h5>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    
-    <a href="\displaycomplains" class="w3-bar-item w3-button w3-padding"><i class="fa fa-comment"></i> Student Feedback</a>
-    <a href="\displayleaves" class="w3-bar-item w3-button w3-padding"><i class="fas fa-file-alt"></i> Leave Applications</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fas fa-book-open"></i> Attendance Status</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fas fa-newspaper fa-fw"></i> Circulars and Notices</a>
-    </div>
-</nav>
-
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
-  <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> ADMIN Dashboard</b></h5>
-  </header>
-
-  <div class="w3-row-padding w3-margin-bottom">
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>52</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4><a href="/displaycomplains">Student Feedback</a></h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-blue w3-padding-16">
-        <div class="w3-left"><i class="fas fa-file-alt w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>99</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4><a href="/displayleaves">Leave Applications</a></h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-teal w3-padding-16">
-        <div class="w3-left"><i class="fas fa-book-open w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>23</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Attendance Status</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-orange w3-text-white w3-padding-16">
-        <div class="w3-left"><i class="far fa-newspaper w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>50</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Circulars and Notices</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-twothird">
-        <h5><strong><u>Student requests needing immediate attention</u></strong></h5>
-        <table class="w3-table w3-striped w3-white">
-          <td><i class="fas fa-comments w3-large"></i></td>
-            <td>The watercooler in the 7th floor - New Rosaline doesn't work</td>
-            <td><i>Sakshi</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-            <td>Internet is down for the past 2days in the Old Rosaline</td>
-            <td><i>Arunitha</i></td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-comments w3-large"></i></i></td>
-            <td>Immediate attention is needed to fix the water tap in A block 3rd floor: Jasper Hostel</td>
-            <td><i>Koushik</i></td>
-          </tr>
+    <div class="tab-content">
+      <div id="activities" class="tab-pane fade in active">
+        <h3 class="text-center">Admin Activities</h3>
+        <div class="activities-container">
+          <!-- Left Column: Buttons -->
+          <div class="activities-menu">
+            
+            <div class="activity-button" onclick="showActivity('leave')">Leave Applications</div>
+            <div class="activity-button" onclick="showActivity('complaints')">Student Complaints</div>
+            <div class="activity-button" onclick="showActivity('feedbacks')">Student Feedbacks</div>
+            <div class="activity-button" onclick="showActivity('notices')">Circulate Notices</div>
+          </div>
           
-          <tr>
-            <td><i class="fas fa-comments w3-large"></i></td>
-            <td>Lost wallet in around the Amber Hostel Garden Area</td>
-            <td><i>Vipul</i></td>
-          </tr>
-          </table>
+           <div id="leave" class="activity-content">
+            <h4>Leave Applications</h4>
+            <div class="leave-buttons">
+              <a href="/admin/leaves/Rosaline" class="btn btn-primary btn-lg btn-block">Rosaline</a>
+            <a href="/admin/leaves/Jasper" class="btn btn-primary btn-lg btn-block">Jasper</a>
+            <a href="/admin/leaves/Amber" class="btn btn-primary btn-lg btn-block">Amber</a>
+            <a href="/admin/leaves/Aquamarine" class="btn btn-primary btn-lg btn-block">Aquamarine</a>
+            </div>
+          </div>
+
+          <div id="complaints" class="activity-content">
+            <h4>Student Complaints</h4>
+            <div class="leave-buttons">
+              <a href="/admin/complaints/Rosaline" class="btn btn-primary btn-lg btn-block">Rosaline</a>
+            <a href="/admin/complaints/Jasper" class="btn btn-primary btn-lg btn-block">Jasper</a>
+            <a href="/admin/complaints/Amber" class="btn btn-primary btn-lg btn-block">Amber</a>
+            <a href="/admin/complaints/Aquamarine" class="btn btn-primary btn-lg btn-block">Aquamarine</a>
+            </div>
+          </div>
+
+          <!-- Right Column: Activity Content -->
+          <div id="feedbacks" class="activity-content">
+            <h4>Student Feedbacks</h4>
+            <div class="feedback-buttons">
+              <a href="/admin/feedbacks/Rosaline" class="btn btn-primary btn-lg btn-block">Rosaline</a>
+                <a href="/admin/feedbacks/Jasper" class="btn btn-primary btn-lg btn-block">Jasper</a>
+                <a href="/admin/feedbacks/Amber" class="btn btn-primary btn-lg btn-block">Amber</a>
+                <a href="/admin/feedbacks/Aquamarine" class="btn btn-primary btn-lg btn-block">Aquamarine</a>
+            </div>
+          </div>
+          
+          <div id="notices" class="activity-content">
+              <h4>Circulate Notices</h4>
+              <form action="/admin/circulate/<%= uid %>" method="POST">
+                <div class="form-group">
+                  <label for="notice">Notice:</label>
+                  <textarea id="notice" name="notice" class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="hostel">Hostel:</label>
+                  <select id="hostel" name="hostel" class="form-control" required>
+                    <option value="Rosaline">Rosaline</option>
+                    <option value="Jasper">Jasper</option>
+                    <option value="Amber">Amber</option>
+                    <option value="Aquamarine">Aquamarine</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Send Notice</button>
+              </form>
+            </div>
+        </div>
       </div>
     </div>
   </div>
 
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    showActivity('leave');
+  });
+    function showActivity(activity) {
+      const activities = document.querySelectorAll('.activity-content');
+      activities.forEach(function(content) {
+        content.classList.remove('active');
+      });
 
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-    overlayBg.style.display = "none";
-  } else {
-    mySidebar.style.display = 'block';
-    overlayBg.style.display = "block";
-  }
-}
-
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
-}
-</script>
+      const activeActivity = document.getElementById(activity);
+      if (activeActivity) {
+        activeActivity.classList.add('active');
+      }
+    }
+  </script>
 
 </body>
 </html>

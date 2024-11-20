@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Make site responsive on mobile/tablet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QnAHub - My Feedbacks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,500" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            font-size: 1rem;
+            margin: 0;
+        }
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 5% auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        /* Heading styling */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Feedback Item Styling */
+        .feedback-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feedback-item h3 {
+            font-size: 1.5rem;
+            color: #2980b9;
+        }
+        .feedback-item p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .feedback-item .rating {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .status {
+            font-size: 1.1rem;
+            color: #e67e22;
+        }
+        /* Back button styling */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 500;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>My Feedbacks</h1>
+    <div>
+        <% if (feedbacks.length > 0) { %>
+            <% feedbacks.forEach(function(feedback) { %>
+                <div class="feedback-item">
+                    <h3><%= feedback.type %></h3>
+                    <p><strong>Description:</strong> <%= feedback.description %></p>
+                    <p><strong>Rating:</strong> <span class="rating"><%= feedback.rating %> / 5</span></p>
+                    
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No feedback available.</p>
+        <% } %>
+        <!-- Back Button -->
+        <a href="/home/student/<%= student._id %>" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>

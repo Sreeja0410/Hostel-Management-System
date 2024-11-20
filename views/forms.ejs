@@ -1,45 +1,93 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-        <!-- Make site responsive on mobile/tablet -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>QnAHub</title>
-        <link rel="icon" type="image/jpeg" href="home.jpeg">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/stylesheets/main.css">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Acme|Chicle|Courgette|Francois+One|Pacifico|Permanent+Marker" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    </head>
-  <body>
+    <!-- Make site responsive on mobile/tablet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QnAHub - Complaint Form</title>
+    <!-- <link rel="icon" type="image/jpeg" href="home.jpeg"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Ubuntu" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
 
     <div class="container">
-    <div class="row">
-        <h1 style="text-align:center;">Complain Form</h1>
-        <div style="width:30%; margin:30px auto;">
-            <form action="/complaint" method="POST">
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Title" name="title">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Type" name="type">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Image Link (Optional)" name="image">
-                </div>
-                
-                <div class="form-group">
-                    <textarea class="form-control" type="text" placeholder="Content" name="content"></textarea>
-                </div>
-                <div class="form-group">
-                       <button class="btn btn-primary btn-lg btn-block">POST</button>
-                </div>
-
-            </form>
-            <a href="/home/student/123">Back</a>
-        </div>
+        <h1>Complaint Form</h1>
+        <form action="/complaint" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Title" name="title" required>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="type" required>
+                    <option value="" disabled selected>Select Complaint Type</option>
+                    <option value="Technical Issue">Technical Issue</option>
+                    <option value="Service Quality">Service Quality</option>
+                    <option value="Billing Issue">Billing Issue</option>
+                    <option value="Account Problem">Account Problem</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Image Link (Optional)" name="image">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" placeholder="Content" name="content" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Post</button>
+            </div>
+        </form>
+        <a href="/home/student/123">Back</a>
     </div>
-    </div>
 
-  </body>
+</body>
 </html>
+
+

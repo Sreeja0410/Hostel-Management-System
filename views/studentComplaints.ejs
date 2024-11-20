@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QnAHub - Complaints</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,500" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+        }
+        /* Container Styling */
+        .container {
+            max-width: 900px;
+            margin: 5% auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        /* Header Styling */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Complaint Item Styling */
+        .complaint-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .complaint-item h3 {
+            font-size: 1.5rem;
+            color: #2980b9;
+        }
+        .complaint-item p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .status {
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .status.resolved {
+            color: #27ae60;
+            background-color: #eafaf1;
+        }
+        .status.pending {
+            color: #e67e22;
+            background-color: #fdf1e7;
+        }
+        .status.rejected {
+            color: #e74c3c;
+            background-color: #fcebeb;
+        }
+        /* Back Button Styling */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Complaints</h1>
+    <div>
+        <% if (complaints.length > 0) { %>
+            <% complaints.forEach(function(complaint) { %>
+                <div class="complaint-item">
+                    <h3><%= complaint.type %></h3>
+                    <p><strong>Description:</strong> <%= complaint.description %></p>
+                    <p><strong>Level:</strong> <%= complaint.level %></p>
+                    <p><strong>Status:</strong> 
+                        <span class="status <%= complaint.status.toLowerCase() %>">
+                            <%= complaint.status %>
+                        </span>
+                    </p>
+                    
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No complaints available.</p>
+        <% } %>
+        <!-- Back Button -->
+        <a href="javascript:window.history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+</div>
+
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js" defer></script>
+</body>
+</html>

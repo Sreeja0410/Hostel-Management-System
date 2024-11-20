@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <!-- <link rel="icon" type="image/jpeg" href="home.jpeg"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* Header section */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(0, 33, 71, 0.8);
+      padding: 10px 20px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .header img {
+      max-height: 70px;
+    }
+
+    /* Login buttons in header */
+    .login {
+      display: flex;
+      gap: 10px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    /* Full-screen background image with overlay */
+    .full-screen-image {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(rgba(20, 18, 72, 0.6), rgba(20, 18, 72, 0.6)), url('ism.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Centered Button on Image */
+    .img-button {
+      color: white;
+      text-decoration: none;
+      background-color: #0f79ca;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+      cursor: pointer;
+      position: relative;
+    top: 130px; 
+    right: 20px;
+    }
+
+    .img-button:hover {
+      transform: scale(1.1);
+      background-color: #007bff;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .button {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+      }
+
+      .img-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section with Logo and Login Buttons -->
+  <div class="header">
+    <img src="logo_new.png" alt="logo">
+    <div class="login">
+      <button class="button" onclick="slogin()">Student Login</button>
+      <button class="button" onclick="alogin()">Staff Login</button>
+    </div>
+  </div>
+
+  <!-- Full-Screen Image Section with Centered Button -->
+  <div class="full-screen-image">
+    <a href="/viewhostels" class="img-button">Visit Hostels</a>
+  </div>
+
+  <script>
+    function slogin() {
+      window.location.href = "/studentlogin";
+    }
+
+    function alogin() {
+      window.location.href = "/adminlogin";
+    }
+  </script>
+</body>
+</html>

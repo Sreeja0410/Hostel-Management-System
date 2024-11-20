@@ -3,8 +3,7 @@
 <head>
     <!-- Make site responsive on mobile/tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QnAHub - Leave Request</title>
-    <!-- <link rel="icon" type="image/jpeg" href="home.jpeg"> -->
+    <title>Report Lost-Found Item</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -45,7 +44,7 @@
         }
         .form-control {
             font-size: 1.1rem;
-            padding: 10px;
+            padding: 8px;
             border: 1px solid #dcdfe3;
             border-radius: 5px;
             transition: border-color 0.3s ease;
@@ -87,45 +86,43 @@
 <body>
 
 <div class="container">
-    <h1>Request Leave</h1>
+    <h1>Report <%= type.charAt(0).toUpperCase() + type.slice(1) %> Item</h1>
     <div>
-        <form action="/leave_request/<%= student._id %>" method="POST">
-            <!-- Request Reason -->
+        <form action="/lostandFound/<%= type %>/<%= student._id %>" method="POST" enctype="multipart/form-data">
+            <!-- Item Name -->
             <div class="form-group">
-                <label for="request">Leave Request</label>
-                <input class="form-control" type="text" placeholder="Enter reason for leave" name="reason" required>
+                <label for="item-name">Item Name</label>
+                <input type="text" class="form-control" id="item-name" name="item" placeholder="Enter the name of the lost item" required>
             </div>
-            <!-- Leave Type -->
+            <!-- Item Description -->
             <div class="form-group">
-                <label for="leave-type">Leave Type</label>
-                <select class="form-control" name="type" id="leave-type" required>
-                    <option value="" disabled selected>Select Leave Type</option>
-                    <option value="Sick Leave">Sick Leave</option>
-                    <option value="Casual Leave">Casual Leave</option>
-                    <option value="Earned Leave">Earned Leave</option>
-                    <option value="Other">Other</option>
+                <label for="item-description">Description</label>
+                <textarea class="form-control" id="item-description" name="description" rows="4" placeholder="Provide details about the lost item" required></textarea>
+            </div>
+            <!-- Hostel Selection -->
+            <div class="form-group">
+                <label for="hostel">Select Hostel</label>
+                <select class="form-control" id="hostel" name="hostel" required>
+                    <option value="Rosaline">Rosaline</option>
+                    <option value="Jasper">Jasper</option>
+                    <option value="Amber">Amber</option>
+                    <option value="Aquamarine">Aquamarine</option>
                 </select>
             </div>
-            <!-- Start Date -->
+            <!-- Upload Image -->
             <div class="form-group">
-                <label for="start-date">Start Date</label>
-                <input type="date" class="form-control" name="startDate" id="start-date" required>
-            </div>
-            <!-- End Date -->
-            <div class="form-group">
-                <label for="end-date">End Date</label>
-                <input type="date" class="form-control" name="endDate" id="end-date" required>
+                <label for="item-image">Upload Image (Optional)</label>
+                <input type="file" class="form-control" id="item-image" name="image" accept="image/*">
             </div>
             <!-- Submit Button -->
             <div class="form-group">
-                <button class="btn btn-primary btn-lg btn-block">Submit Request</button>
+                <button class="btn btn-primary btn-lg btn-block">Report Item</button>
             </div>
         </form>
         <!-- Back Button -->
-        <a href="/home/student/<%= student._id  %>" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <a href="javascript:window.history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
 </div>
 
 </body>
 </html>
-
